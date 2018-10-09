@@ -1,0 +1,100 @@
+#set path
+#export LD_LIBRARY_PATH=$MPICH/lib:$ZLIB/lib:$NETCDF/lib:$JASPER/lib:$LIBPNG/lib:$LD_LIBRARY_PATH
+#export PATH=$MPICHDIR/bin:$PGIDIR/bin:$NCDIR/bin:$NCARG_ROOT/bin:$NCVIEWDIR/bin:$GRIB2DIR/bin:$PATH
+
+DIR=$your path for install_wrf.sh
+
+# set pgi
+
+export PGI=$your pgi path
+
+export PATH=$PGI/linux86-64/17.10/bin:$PATH
+
+export MANPATH=$PGI/linux86-64/17.10/man/man1:$MANPATH
+
+export LM_LICENSE_FILE=$PGI/license.dat
+
+export LD_LIBRARY_PATH=$PGI/linux86-64/17.10/lib:$LD_LIBRARY_PATH
+
+# set JASPER
+
+export JASPER=$DIR/env
+
+export PATH=$JASPER/bin:$PATH
+
+export JASPERLIB=$JASPER/lib
+
+export JASPERINC=$JASPER/include
+
+export LD_LIBRARY_PATH=$JASPER/lib:$LD_LIBRARY_PATH
+
+# set zlib
+
+export ZLIB=$DIR/env
+
+export ZLIBLIB=$ZLIB/lib
+
+export ZLIBINC=$ZLIB/include
+
+#export LD_LIBRARY_PATH=$ZLIB/bin:$LD_LIBRARY_PATH
+
+# set libpng
+
+export LIBPNG=$DIR/env
+
+export LIBPNGLIB=$LIBPNG/lib
+
+export LIBPNGINC=$LIBPNG/include
+
+export PATH=$LIBPNG/bin:$PATH
+
+export LD_LIBRARY_PATH=$LIBPNG/lib:$LD_LIBRARY_PATH
+
+# set HDF5 1.10.1
+
+#export HDF5=$DIR/hdf5
+
+#export HDF5INC=$HDF5/include
+
+#export HDF5LIB=$HDF5/lib
+
+#export PATH=$HDF5/bin:$PATH
+
+#export LD_LIBRARY_PATH=$HDF5/lib:$LD_LIBRARY_PATH
+
+#export LD_RUN_PATH=$HDF5/lib:$LD_RUN_PATH
+
+# set NETCDF 3.6.3
+
+export NETCDF=$DIR/netcdf
+
+export NETCDFLIB=$NETCDF/lib
+
+export NETCDFINC=$NETCDF/include
+
+export PATH=$NETCDF/bin:$PATH
+
+export LD_LIBRARY_PATH=$NETCDF/lib:$LD_LIBRARY_PATH
+
+export LD_RUN_PATH=$NETCDF/lib:$LD_RUN_PATH
+
+#for mpich2
+
+export   MPICH=$DIR/mpich
+
+export   PATH=$MPICH/bin:$PATH
+
+export   LD_LIBRARY_PATH=$MPICH/lib:$LD_LIBRARY_PATH
+
+export   LD_RUN_PATH=$MPICH/lib:$LD_RUN_PATH
+
+export   MANPATH=$MPICH/share/man
+
+# for wrf
+
+
+
+# set CFLAGS 
+#export CFLAGS=""
+
+
