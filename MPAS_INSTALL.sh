@@ -12,7 +12,7 @@
 ###########################################
 # If it ia a new system, you should install
 # build-essential gcc g++ gfortran
-# make cmake m4 gawk tcsh zlib libpng git
+# make m4 gawk tcsh zlib libpng git
 ###########################################
 #sudo apt-get install update upgrade
 #sudo apt-get install build-essential gcc g++ gfortran
@@ -45,7 +45,7 @@ wget -P ${LIBSRC} http://www2.mmm.ucar.edu/people/duda/files/mpas/sources/hdf5-1
 wget -P ${LIBSRC} http://www2.mmm.ucar.edu/people/duda/files/mpas/sources/parallel-netcdf-1.8.1.tar.gz  #pnetcdf
 wget -P ${LIBSRC} http://www2.mmm.ucar.edu/people/duda/files/mpas/sources/netcdf-4.4.1.1.tar.gz #netcdf-c
 wget -P ${LIBSRC} http://www2.mmm.ucar.edu/people/duda/files/mpas/sources/netcdf-fortran-4.4.4.tar.gz #netcdf-fortran
-#wget -P ${LIBSRC} http://www2.mmm.ucar.edu/people/duda/files/mpas/sources/cmake-3.4.0-rc3.tar.gz  #cmake
+wget -P ${LIBSRC} http://www2.mmm.ucar.edu/people/duda/files/mpas/sources/cmake-3.4.0-rc3.tar.gz  #cmake
 
 ########################################
 # MPICH
