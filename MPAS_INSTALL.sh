@@ -187,6 +187,7 @@ export MPAS_EXTERNAL_INCLUDES="-I${LIBBASE}/include"
 # MPAS
 ########################################
 git clone https://github.com/MPAS-Dev/MPAS-Model.git
+git clone https://github.com/MPAS-Dev/MPAS-Tools.git
 cd MPAS-Model
 make gfortran CORE=init_atmosphere USE_PIO2=true
 make clean CORE=atmosphere
