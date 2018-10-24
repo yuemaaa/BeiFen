@@ -197,6 +197,7 @@ make gfortran CORE=atmosphere USE_PIO=2
 # WPS(v3) geog static data
 ########################################
 mkdir $LIBSRC/geog_source
+cd $LIBSRC/geog_source
 wget -P $LIBSRC/geog_source http://www2.mmm.ucar.edu/wrf/src/wps_files/NUDAPT44_1km.tar.bz2
 wget -P $LIBSRC/geog_source http://www2.mmm.ucar.edu/wrf/src/wps_files/albedo_ncep.tar.bz2
 wget -P $LIBSRC/geog_source http://www2.mmm.ucar.edu/wrf/src/wps_files/bnu_soiltype_bot.tar.bz2
@@ -269,7 +270,7 @@ wget -P $LIBSRC/geog_source http://www2.mmm.ucar.edu/wrf/src/wps_files/varsso.ta
 
 mkdir $LIB_PATH_FOR_MPAS/geog
 for i in $(ls *.tar.bz2);do tar jxvf $i -C $LIB_PATH_FOR_MPAS/geog;done
-
+cd $LIB_PATH_FOR_MPAS
 ########################################
 # modified ~/.bashrc
 ########################################
