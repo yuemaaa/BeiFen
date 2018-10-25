@@ -22,11 +22,11 @@
 ################################## Begin ##################################
 
 # Where to find sources for libraries
-export LIB_PATH_FOR_MPAS=`pwd`
-export LIBSRC=$LIB_PATH_FOR_MPAS/sources
+export PATH_FOR_MPAS=`pwd`
+export LIBSRC=$PATH_FOR_MPAS/sources
 
 # Where to install libraries
-export LIBBASE=$LIB_PATH_FOR_MPAS/mpas-libs
+export LIBBASE=$PATH_FOR_MPAS/mpas-libs
 
 # Compilers
 export SERIAL_FC=gfortran
@@ -270,7 +270,7 @@ wget -P $LIBSRC/geog_source http://www2.mmm.ucar.edu/wrf/src/wps_files/varsso.ta
 
 mkdir $LIB_PATH_FOR_MPAS/geog
 for i in $(ls *.tar.bz2);do tar jxvf $i -C $LIB_PATH_FOR_MPAS/geog;done
-cd $LIB_PATH_FOR_MPAS
+cd $PATH_FOR_MPAS
 ########################################
 # modified ~/.bashrc
 ########################################
@@ -279,7 +279,7 @@ cat >> ~/.bashrc << EOF
 ################################################
 #          MODIFIED BY MPAS_INSTALL.sh         #
 ################################################
-export LIB_PATH_FOR_MPAS=$LIB_PATH_FOR_MPAS
+export PATH_FOR_MPAS=$LIB_PATH_FOR_MPAS
 export LIBSRC=$LIB_PATH_FOR_MPAS/sources
 export LIBBASE=$LIB_PATH_FOR_MPAS/mpas-libs
 export PATH=\$PATH:${LIBBASE}/bin
