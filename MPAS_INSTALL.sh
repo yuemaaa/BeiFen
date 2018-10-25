@@ -282,7 +282,7 @@ cat >> ~/.bashrc << EOF
 export LIB_PATH_FOR_MPAS=$LIB_PATH_FOR_MPAS
 export LIBSRC=$LIB_PATH_FOR_MPAS/sources
 export LIBBASE=$LIB_PATH_FOR_MPAS/mpas-libs
-export PATH=${LIBBASE}/bin:$PATH
+export PATH=\$PATH:${LIBBASE}/bin
 export PNETCDF=${LIBBASE}
 export NETCDF=${LIBBASE}
 export PIO=$LIBBASE
