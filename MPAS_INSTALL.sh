@@ -194,6 +194,33 @@ make clean CORE=atmosphere
 make gfortran CORE=atmosphere USE_PIO=2
 
 ########################################
+# modified ~/.bashrc
+########################################
+
+cat >> ~/.bashrc << EOF
+################################################
+#          MODIFIED BY MPAS_INSTALL.sh         #
+################################################
+export PATH_FOR_MPAS=$LIB_PATH_FOR_MPAS
+export LIBSRC=$LIB_PATH_FOR_MPAS/sources
+export LIBBASE=$LIB_PATH_FOR_MPAS/mpas-libs
+export PATH=\$PATH:${LIBBASE}/bin
+export PNETCDF=${LIBBASE}
+export NETCDF=${LIBBASE}
+export PIO=$LIBBASE
+export MPAS_EXTERNAL_LIBS="-L${LIBBASE}/lib -lhdf5_hl -lhdf5 -ldl -lz"
+export MPAS_EXTERNAL_INCLUDES="-I${LIBBASE}/include"
+################################################
+
+EOF
+
+################################## End ##################################
+
+
+
+############################ Static Data & Mesh Grid ###############################
+
+########################################
 # WPS(v3) geog static data
 ########################################
 mkdir $LIBSRC/geog_source
@@ -271,25 +298,27 @@ wget -P $LIBSRC/geog_source http://www2.mmm.ucar.edu/wrf/src/wps_files/varsso.ta
 mkdir $LIB_PATH_FOR_MPAS/geog
 for i in $(ls *.tar.bz2);do tar jxvf $i -C $LIB_PATH_FOR_MPAS/geog;done
 cd $PATH_FOR_MPAS
-########################################
-# modified ~/.bashrc
-########################################
 
-cat >> ~/.bashrc << EOF
-################################################
-#          MODIFIED BY MPAS_INSTALL.sh         #
-################################################
-export PATH_FOR_MPAS=$LIB_PATH_FOR_MPAS
-export LIBSRC=$LIB_PATH_FOR_MPAS/sources
-export LIBBASE=$LIB_PATH_FOR_MPAS/mpas-libs
-export PATH=\$PATH:${LIBBASE}/bin
-export PNETCDF=${LIBBASE}
-export NETCDF=${LIBBASE}
-export PIO=$LIBBASE
-export MPAS_EXTERNAL_LIBS="-L${LIBBASE}/lib -lhdf5_hl -lhdf5 -ldl -lz"
-export MPAS_EXTERNAL_INCLUDES="-I${LIBBASE}/include"
-################################################
+########################################
+# Mesh
+########################################
+wget -P $LIBSRC/Mesh/480km http://www2.mmm.ucar.edu/projects/mpas/atmosphere_meshes/x1.2562.tar.gz	
+wget -P $LIBSRC/Mesh/384km http://www2.mmm.ucar.edu/projects/mpas/atmosphere_meshes/x1.4002.tar.gz	
+wget -P $LIBSRC/Mesh/240km http://www2.mmm.ucar.edu/projects/mpas/atmosphere_meshes/x1.10242.tar.gz	
+wget -P $LIBSRC/Mesh/120km http://www2.mmm.ucar.edu/projects/mpas/atmosphere_meshes/x1.40962.tar.gz	
+wget -P $LIBSRC/Mesh/60km http://www2.mmm.ucar.edu/projects/mpas/atmosphere_meshes/x1.163842.tar.gz	
+wget -P $LIBSRC/Mesh/30km http://www2.mmm.ucar.edu/projects/mpas/atmosphere_meshes/x1.655362.tar.gz	
+wget -P $LIBSRC/Mesh/24km http://www2.mmm.ucar.edu/projects/mpas/atmosphere_meshes/x1.1024002.tar.gz	
+wget -P $LIBSRC/Mesh/15km http://www2.mmm.ucar.edu/projects/mpas/atmosphere_meshes/x1.2621442.tar.gz	
+wget -P $LIBSRC/Mesh/10km http://www2.mmm.ucar.edu/projects/mpas/atmosphere_meshes/x1.5898242.tar.gz	
+wget -P $LIBSRC/Mesh/3km http://www2.mmm.ucar.edu/projects/mpas/atmosphere_meshes/x1.65536002.tar.gz	
+wget -P $LIBSRC/Mesh/92_25km http://www2.mmm.ucar.edu/projects/mpas/atmosphere_meshes/x4.163842.tar.gz	
+wget -P $LIBSRC/Mesh/46_12km http://www2.mmm.ucar.edu/projects/mpas/atmosphere_meshes/x4.655362.tar.gz	
+wget -P $LIBSRC/Mesh/60_15km http://www2.mmm.ucar.edu/projects/mpas/atmosphere_meshes/x4.535554.tar.gz	
+wget -P $LIBSRC/Mesh/60_10km http://www2.mmm.ucar.edu/projects/mpas/atmosphere_meshes/x6.999426.tar.gz	
+wget -P $LIBSRC/Mesh/60_3km http://www2.mmm.ucar.edu/projects/mpas/atmosphere_meshes/x20.835586.tar.gz	
+wget -P $LIBSRC/Mesh/15_3km http://www2.mmm.ucar.edu/projects/mpas/atmosphere_meshes/x5.6488066.tar.gz	
 
-EOF
+
 
 ################################## End ##################################
