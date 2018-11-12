@@ -8,3 +8,6 @@ MPAS_INSTALL是一个用来自动安装MPAS的bash脚本。
 
 Sources for all libraries used in this script can be found at
 http://www2.mmm.ucar.edu/people/duda/files/mpas/sources/ 
+
+如果在集群上安装请确认是否有安装git命令
+PIO在使用make/cmake构建时需要通过git获取gen90包
